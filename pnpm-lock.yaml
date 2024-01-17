@@ -62,6 +62,9 @@ dependencies:
   next:
     specifier: ^13.1.6
     version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
+  nextjs-basic-auth-middleware:
+    specifier: ^3.1.0
+    version: 3.1.0(next@13.5.4)
   nextjs-progressbar:
     specifier: ^0.0.16
     version: 0.0.16(next@13.5.4)(react@18.2.0)
@@ -4611,6 +4614,14 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /nextjs-basic-auth-middleware@3.1.0(next@13.5.4):
+    resolution: {integrity: sha512-k1GSYiLMYj4tK6swAmArTUBheSkv7roUUF2KI8Cv8HYHmSYep5Y0AP0RB/1sez7xTRi2Fw2SxYbQA/jAmBJCug==}
+    peerDependencies:
+      next: '>=13.1'
+    dependencies:
+      next: 13.5.4(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /nextjs-progressbar@0.0.16(next@13.5.4)(react@18.2.0):
