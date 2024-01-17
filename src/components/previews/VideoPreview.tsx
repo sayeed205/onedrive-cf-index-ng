@@ -1,25 +1,27 @@
 import type { OdFileObject } from '../../types'
 
-import { FC, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { FC, useEffect, useState } from 'react'
 
 import axios from 'axios'
-import toast from 'react-hot-toast'
-import Plyr from 'plyr-react'
+import dynamic from 'next/dynamic'
 import { useAsync } from 'react-async-hook'
+import toast from 'react-hot-toast'
 import { useClipboard } from 'use-clipboard-copy'
 
 import { getBaseUrl } from '../../utils/getBaseUrl'
 import { getExtension } from '../../utils/getFileIcon'
 import { getStoredToken } from '../../utils/protectedRouteHandler'
 
+import CustomEmbedLinkMenu from '../CustomEmbedLinkMenu'
 import { DownloadButton } from '../DownloadBtnGtoup'
-import { DownloadBtnContainer, PreviewContainer } from './Containers'
 import FourOhFour from '../FourOhFour'
 import Loading from '../Loading'
-import CustomEmbedLinkMenu from '../CustomEmbedLinkMenu'
+import { DownloadBtnContainer, PreviewContainer } from './Containers'
 
 import 'plyr-react/plyr.css'
+
+const Plyr = dynamic(() => import('plyr-react'), { ssr: false })
 
 const VideoPlayer: FC<{
   videoName: string
