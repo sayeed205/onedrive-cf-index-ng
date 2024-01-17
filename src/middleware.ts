@@ -37,6 +37,10 @@ import { createNextAuthMiddleware } from 'nextjs-basic-auth-middleware'
 
 export const middleware = createNextAuthMiddleware()
 
+// export const config = {
+//   matcher: ['/(.*)'], // Replace this with your own matcher logic
+
+// }
 export const config = {
-  matcher: ['/(?!.*/api/raw/)(?!.*/api/name/)(.*)'], // Matcher logic with exclusion
+  matcher: ['/((?!api/raw|api/name/).*)'],
 }
